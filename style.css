@@ -1,0 +1,213 @@
+html,
+body {
+	margin: 0;
+	overflow: hidden;
+}
+
+canvas {
+	display: block;
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent; /* 배경이 투명한지 확인 */
+}
+
+/* UI */
+*{
+    box-sizing: border-box;
+}
+.navigator {
+    display: flex;
+    justify-content: center;
+    width: 640px;
+    height: 72px;
+    background-color: rgba(65, 65, 65, 0.6);
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 14px;
+    text-align: center;
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50% , 0%);
+}
+.navigator > .item {
+    flex: 1; 
+}
+.navigator > .item:hover {
+    border: 0.1px solid #ffffff; 
+}
+
+.item {
+    color: #FFFFFF;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6px 3px;
+    padding: 0 12px;
+    gap: 6px;
+    border-radius: 10px;
+    border: 0.1px solid #afafaf; 
+    cursor: pointer;
+}
+
+.item.arrow {
+    flex-grow: 0; 
+    flex-shrink: 0; 
+    width: 60px; 
+    height: 60px; 
+    border: none; 
+}
+.item.arrow:hover {
+    border: none; 
+}
+
+.arrow {
+    color: #FFFFFF;
+    background: rgba(27, 27, 27, 0.6);
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    margin: 6px 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item svg {
+    width: 18px;
+    height: 18px;
+}
+
+
+.page_tooltip.active {
+    opacity: 1;
+}
+.page_tooltip{
+    opacity: 0;
+    pointer-events: none;
+    font-size: 14px;
+    display: flex;
+    height: 60px;
+    padding: 18px 24px;
+    background: rgba(27, 27, 27, 0.6);
+    align-items: center;
+    border-radius: 10px;
+
+    position: fixed;
+    bottom: 140px;
+    left: 50%;
+    transform: translate(-50% , 0%);
+    transition: 0.3s;
+}
+.page_tooltip p {
+    color: #FFFFFF;
+    margin: 0;
+    height: 18px;
+    line-height: 18px;
+
+
+}
+
+.btn_tooltip .tooltip_on {
+    color:#ffffff ;
+}
+
+.btn_tooltip .tooltip_off {
+    display: none;
+    color: #afafaf ;
+}
+.btn_tooltip.active .tooltip_on{
+    display: none;
+ }
+
+ .btn_tooltip.active .tooltip_off{
+    display: block;
+ }
+ 
+ 
+
+
+.btn_sound .mute {
+    color: #afafaf;
+ }
+.btn_sound .sound {
+    display: none;
+}
+
+.btn_sound.active .mute {
+    display: none;
+ }
+ .btn_sound.active .sound{
+    display: block;
+ }
+
+ .dimmer {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	transition: 0.3s;
+	
+}
+
+.dimmer.end {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.loader {
+	width: 250px;
+	height: 8px;
+	border: 0.1px solid #FF0000;
+}
+
+.progress {
+	width: 10%;
+	height: 100%;
+	background-color: #FF0000;
+	transition: 0.3s;
+}
+
+@media screen and (max-width : 425px ){
+    .navigator {
+        width: 80%;
+        height: 50px;
+        border-radius: 8px;
+        font-size: 8px;
+    }
+    .item {
+        width: 20px;
+        border-radius: 6px;
+        height: 40px;
+    }
+    .item svg {
+        width:200px;
+        height: 200px;
+    }
+    .item.arrow {
+        flex-grow: 0; 
+        flex-shrink: 0; 
+        width: 40px; 
+        height: 40px; 
+        border: none; 
+    }
+    .arrow {
+        width: 50px;
+        height: 40px;
+    }
+    
+}
